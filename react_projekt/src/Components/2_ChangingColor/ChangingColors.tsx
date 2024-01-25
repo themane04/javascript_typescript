@@ -15,7 +15,7 @@ const ColorChanger = function () {
 
     return (
         <div>
-            <h1 style={{color: color}}>{text}</h1>
+            <h1 style={{color: color, paddingTop:"50px"}}>{text}</h1>
             <button onClick={changeTextAndColor}>Change</button>
         </div>
     );

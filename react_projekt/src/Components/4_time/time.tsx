@@ -13,10 +13,13 @@ function Time() {
         };
     }, []);
 
-    const date = new Date();
-    const hours = date.getHours()
-    const minutes = date.getMinutes()
-    const seconds = date.getSeconds()
+    const padWithZero = (number: number) => {
+        return number.toString().padStart(2, "0");
+    }
+
+    const hours = padWithZero(currentTime.getHours())
+    const minutes = padWithZero(currentTime.getMinutes());
+    const seconds = padWithZero(currentTime.getSeconds());
 
     return (
         <>

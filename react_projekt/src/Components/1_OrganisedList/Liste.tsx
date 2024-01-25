@@ -1,17 +1,19 @@
 import React from "react"
 
-export const SomeList = function () {
+const SomeList = function () {
     return (
-        <div style={{background: "yellow"}}>
+        <div style={{paddingTop:"50px"}}>
             <h2>An Unordered HTML List</h2>
             <li>Coffe</li>
             <li>Tee</li>
             <li>Milk</li>
 
-            <h2>An Ordered HTML List</h2>
+            <h2 style={{paddingTop:"20px"}}>An Ordered HTML List</h2>
             <li>Coffe</li>
             <li>Tee</li>
             <li>Milk</li>
         </div>
     )
-}
+};
+
+export default SomeList;

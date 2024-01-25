@@ -2,7 +2,7 @@ import React from "react";
 
 export function FirstComponent() {
     return (
-        <div style={{border: "2px solid green", marginLeft:"40%", marginRight:"50%"}}>
+        <div style={{marginTop:"50px", border: "2px solid green", marginLeft:"45%", marginRight:"45%"}}>
             <h1 >First</h1>
             <SecondComponent></SecondComponent>
             <SecondComponent></SecondComponent>

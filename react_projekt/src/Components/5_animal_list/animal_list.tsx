@@ -35,9 +35,9 @@ export function AnimalList() {
 
     return (
         <>
-            <div style={{textAlign: "center"}}>
+            <div style={{ paddingTop:"5%", textAlign: "center"}}>
                 <h1>Animal List</h1>
-                <p>Name</p>
+                <p style={{fontSize:"30px", paddingTop:"20px"}}>Name</p>
                 <input
                     ref={nameInputRef}
                     name="name"
@@ -45,21 +45,21 @@ export function AnimalList() {
                     onChange={handleInputChange}
                 />
 
-                <p>Call</p>
+                <p style={{fontSize:"30px", paddingTop:"20px"}}>Call</p>
                 <input ref={callInputRef}
                        name="call"
                        value={formData.call}
                        onChange={handleInputChange}
                 />
 
-                <div style={{paddingTop:"30px"}}>
+                <div>
                     {animals.map((animal, index) => (
                         <div key={index}>{`${animal.name} says ${animal.call}`}</div>
                     ))}
                 </div>
 
                 <button onClick={handleAddAnimal}
-                        style={{width: "100px", height: "50px", position: "fixed", top: "145px", marginLeft: "10%"}}>Add
+                        style={{width: "5%", height: "5%", position: "absolute", top: "45%", marginLeft: "10%"}}>Add
                 </button>
             </div>
 
