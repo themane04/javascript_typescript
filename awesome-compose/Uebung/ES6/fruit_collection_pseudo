@@ -1,0 +1,46 @@
+Constructor:
+X Create a constructor that can accept an optional map of fruits with their
+X quantities.
+X Initialize the storage with this map or use an empty map if none is provided.
+
+Add or Update Fruit (newFruit):
+X Function takes a fruit name and an optional quantity (default to zero).
+X Check if the fruit already exists in storage.
+X If it exists, add the new quantity to the existing quantity.
+X If it doesn't exist, check if adding a new fruit would exceed the allowed
+X number of different fruits.
+X Also, ensure that adding the fruit does not exceed the maximum capacity for
+X any fruit.
+X If conditions are met, add the new fruit to storage.
+
+Remove Fruit (removeFruit):
+X Function takes a fruit name.
+X Remove the specified fruit from storage.
+
+Increase or Decrease Quantity (buy and sell):
+X Functions take a fruit name and a quantity.
+X For buying, add the specified quantity to the fruit's existing quantity,
+X ensuring it doesn’t exceed the maximum capacity.
+X For selling, subtract the quantity from the fruit's existing quantity,
+X ensuring it doesn’t fall below zero.
+
+List of All Fruits (fruitlist):
+X Create a function that returns a list of all fruit names currently in storage.
+
+List of Fruit Quantities (stock):
+X Create a function that returns a list of fruits with their quantities,
+X sorted by the quantity.
+
+Capacity and Variety Checks:
+X Within the functions for adding or buying fruits, include checks to
+X ensure that the storage does not exceed its maximum capacity per fruit
+X and the maximum number of different fruits.
+
+Set New Storage Capacity (setStoragecapacity):
+X Function takes new values for the number of rooms and total capacity.
+X Update the storage with these new values.
+X Check if the current stock fits within the new limits.
+
+Testing:
+X Test the functionality by iterating over all fruits in the storage and
+X printing their details.

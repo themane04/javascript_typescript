@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1 id="hd1">My Heading 1</h1>
+
+    <button id="mybutton">Click Me</button>
+
+    <script>
+      document
+        .getElementById("mybutton")
+        .addEventListener("click", function () {
+          const text = document.getElementById("hd1");
+          if (text.style.color === "black") {
+            text.style.color = "red";
+          } else {
+            text.style.color = "black";
+          }
+        });
+    </script>
+  </body>
+</html>

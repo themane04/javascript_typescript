@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      button {
+        min-width: 120px;
+        min-height: 40px;
+      }
+
+      li {
+        margin-top: 7px;
+        margin-left: 20px;
+      }
+
+      #li1 {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">Add More</button>
+    <button id="btn2">Remove Last</button>
+    <ul id="numberlist">
+      <li id="li1">1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script>
+      document.getElementById("btn1").addEventListener("click", function () {
+        const list = document.getElementById("numberlist");
+        const newnumber = list.children.length + 1;
+        const newLi = document.createElement("li");
+        newLi.textContent = newnumber;
+        list.appendChild(newLi);
+      });
+
+      document.getElementById("btn2").addEventListener("click", function () {
+        const list = document.getElementById("numberlist");
+        if (list.children.length > 0) {
+          list.removeChild(list.lastElementChild);
+        }
+      });
+    </script>
+  </body>
+</html>

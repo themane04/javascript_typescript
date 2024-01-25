@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<body>
+<div id="id01"></div>
+
+<script>
+    const xmlhttp = new XMLHttpRequest();
+    const url = "List.txt";
+
+    async function linkedList() {
+        let response = await fetch(url);
+        let list = await response.json();
+        console.log(list);
+
+        for (let element of list) {
+            let a = document.createElement("a"); // anchor <a> Element
+
+            a.href = element.url; // href mit dem URL vom File 'verbinden'
+
+            a.textContent = element.display; // name des Elementes
+
+            a.target = "_blank"; // (optional), den Link in einem neuen Tab zu öffnen
+
+            let br = document.createElement("br");
+
+            document.getElementById("id01").appendChild(a);
+
+            document.getElementById("id01").appendChild(br);
+        }
+    }
+
+
+    console.log(linkedList());
+</script>
+</body>
+</html>

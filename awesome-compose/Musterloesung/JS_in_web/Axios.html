@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <form id="newbook">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" />
+
+      <label for="desc">Desc</label>
+      <input type="text" name="desc" id="desc" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <ul id="booklist"></ul>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const data = new FormData(event.target);
+
+        const title = data.get("title");
+        const desc = data.get("desc");
+        document.getElementById("newbook").reset();
+        axios.post("http://localhost:8877/api/newbook", {
+          title: title,
+          descript: desc,
+        });
+      }
+      //Might need to replace url:port
+      const form = document.getElementById("newbook");
+      form.addEventListener("submit", handleSubmit);
+
+      axios.get("http://localhost:8877/api/books").then((response) => {
+        let list = document.getElementById("booklist");
+        for (book of response.data.books) {
+          let newli = document.createElement("li");
+
+          newli.innerHTML = "<b>" + book.title + "</b>: " + book.descript;
+          list.appendChild(newli);
+        }
+
+        console.log(response.data.books);
+      });
+    </script>
+  </body>
+</html>

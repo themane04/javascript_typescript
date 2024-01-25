@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const image = "https://i.imgflip.com/73mtc3.jpg?a473712";
+
+    function displayImage(){
+        fetch(image)
+            .then(response => response.blob())
+            .then(blob => {
+                let img = document.createElement('img');
+                img.src = URL.createObjectURL(blob);
+                img.style.position = 'absoule';
+                img.style.padding = '40px'
+                img.style.left = '0'
+
+                let paragraph = document.createElement('p');
+                paragraph.textContent = "Image using then()";
+                paragraph.style.position = 'absolute';
+                paragraph.style.top = '0';
+
+                document.body.appendChild(img);
+                document.body.appendChild(paragraph)
+            })
+    }
+
+    displayImage()
+
+    async function displayImage2() {
+        let response = await fetch(image);
+        let blob = await response.blob();
+
+        let img = document.createElement("img");
+        img.src = URL.createObjectURL(blob);
+        img.style.position = 'absolute';
+        img.style.padding = '40px'
+        img.style.marginTop = '315px'
+        img.style.left = "0"
+        img.style.top = "50"
+
+        let paragraph = document.createElement('p');
+        paragraph.textContent = "Image using async/await";
+
+        document.body.appendChild(img);
+        document.body.appendChild(paragraph)
+    }
+
+    displayImage2()
+
+</script>
+
+</body>
+</html>
