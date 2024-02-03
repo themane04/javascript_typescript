@@ -97,52 +97,40 @@ function MyForm() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control
-                        type={showPassword ? 'text' : 'password'}
-                        placeholder="Password"
-                        isInvalid={submitted && !validatePassword(password)}
-                        onChange={handlePasswordChange}
-                    />
-                    <InputGroup.Text
-                        className="col-1"
-                        onClick={() => setShowPassword(!showPassword)}
-                        style={{
-                            width: "60px",
-                            height: "38px",
-                            cursor: 'pointer',
-                            marginLeft: '91%',
-                            marginTop: '-5.5%',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}>
-                        {showPassword ? <AiOutlineEyeInvisible/> : <AiOutlineEye/>}
-                    </InputGroup.Text>
+                    <InputGroup>
+                        <Form.Control
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder="Password"
+                            isInvalid={submitted && !validatePassword(password)}
+                            onChange={handlePasswordChange}
+                        />
+                        <InputGroup.Text
+                            style={{ cursor: 'pointer', border: 0, backgroundColor: "transparent" }}
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <AiOutlineEyeInvisible/> : <AiOutlineEye/>}
+                        </InputGroup.Text>
+                    </InputGroup>
+                    <Form.Control.Feedback type="invalid">
+                        {submitted && !validatePassword(password) ? 'Invalid password.' : ''}
+                    </Form.Control.Feedback>
 
-                    <Form.Control
-                        style={{marginTop:"2%"}}
-                        type={showPassword ? 'text' : 'password'}
-                        placeholder="Confirm Password"
-                        isInvalid={submitted && !doPasswordsMatch()}
-                        onChange={handleConfirmPasswordChange}
-                    />
+                    <InputGroup className="mt-3">
+                        <Form.Control
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder="Confirm Password"
+                            isInvalid={submitted && !doPasswordsMatch()}
+                            onChange={handleConfirmPasswordChange}
+                        />
+                    </InputGroup>
                     <Form.Control.Feedback type="invalid">
                         {submitted && !doPasswordsMatch() ? 'Passwords do not match.' : ''}
                     </Form.Control.Feedback>
-                    <div className="p-1" style={{textAlign: "left"}}>
-                        <p style={{color: hasCapitalLetter ? 'green' : 'red', marginBottom: '0'}}> {hasCapitalLetter &&
-                            <AiOutlineCheck/>}Capital letter</p>
-                        <p style={{color: hasNumber ? 'green' : 'red', marginBottom: '0'}}>{hasNumber &&
-                            <AiOutlineCheck/>}Number</p>
-                        <p style={{color: hasSpecialChar ? 'green' : 'red', marginBottom: '0'}}>{hasSpecialChar &&
-                            <AiOutlineCheck/>}Special character</p>
-                        <p style={{color: hasEightLetters ? 'green' : 'red', marginBottom: '0'}}> {hasEightLetters &&
-                            <AiOutlineCheck/>}At least 8 characters</p>
-                        <p style={{color: doPasswordsMatch() ? 'green' : 'red', marginBottom: '0'}}>
-                            {doPasswordsMatch() && <AiOutlineCheck/>} Passwords match</p>
+
+                    <div className="p-1" style={{ textAlign: "left" }}>
+                        {/* Validation messages */}
                     </div>
-                </Form.Group>
-                <Form.Group className="col-6" controlId="formBasicCheckbox">
+                </Form.Group>                <Form.Group className="col-6" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Agree with our Terms and Conditions"/>
                 </Form.Group>
             </Row>
