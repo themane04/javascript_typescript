@@ -2,7 +2,7 @@
 
 This project is a React-based website designed to consolidate all my programming exercises. It utilizes a router to seamlessly connect each exercise, making them all accessible via a dedicated navbar.
 
-## Setup Instructions
+## Setup
 
 To get the project up and running on your local machine, follow these steps:
 
