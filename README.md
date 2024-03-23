@@ -15,6 +15,7 @@ Building on our JavaScript foundations, we shifted our focus to TypeScript. This
 ### React Integration
 
 Incorporating React into our exercises, we delved into component-based architecture, state management, and the creation of interactive user interfaces. This phase underscored the power and efficiency of building web applications with React.
+To see all of my react exercises visit the [react_project repository](https://github.com/themane04/javascript_typescript/tree/react_project)
 
 ### Docker Utilization
 
